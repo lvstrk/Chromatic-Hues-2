@@ -9,7 +9,6 @@
     text-decoration: none;
 }
 
-html,
 body {
     height: 100%;
     overflow-y: scroll;
@@ -41,17 +40,121 @@ li {
 /*- - - - - Nav bar - - - - - */
 
 .nav_bar ul {
-    display: inline-block;
-    transform: rotate(90deg);
-    writing-mode: vertical-rl;
-
+display: flex;
 }
 
+.nav_bar ul {
+    display: inline-block;;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav_bar ul {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+  .nav_bar ul li:before {
+    position: absolute;
+    inset: calc(100% - 3px) 0 0 0; 
+    background: #94BDF2; 
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+  }
+  ul:hover li:before {
+    scale: 1;
+  }
+  .nav_bar ul li:hover:before {
+    translate: 0;
+    transition: .3s;
+  }
+  .nav_bar ul:hover li:has(~ li:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s,scale 0s .4s;
+  }
+  .nav_bar ul:hover li:hover ~ li:before {
+    translate: -100% 0;
+    transition: .2s .2s,scale 0s .4s;
+  }
+.nav_bar ul {
+    display: inline-block;;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav_bar ul {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+  .nav_bar ul li:before {
+    content: "";
+    position: absolute;
+    inset: calc(100% - 3px) 0 0 0; 
+    background: #94BDF2; 
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+  }
+  ul:hover li:before {
+    scale: 1;
+  }
+  .nav_bar ul li:hover:before {
+    translate: 0;
+    transition: .3s;
+  }
+  .nav_bar ul:hover li:has(~ li:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s,scale 0s .4s;
+  }
+  .nav_bar ul:hover li:hover ~ li:before {
+    translate: -100% 0;
+    transition: .2s .2s,scale 0s .4s;
+  }
+
 /*- - - - - Jumbotron - - - - - */
+
+.blue, .yellow, .red, .green {
+    transition: all 0.3s ease-in-out; 
+    margin: 10px;
+  }
+  
+
+.blue:hover {
+    color: #94BDF2;
+    transform: scale(1.1);
+}
+
+.yellow:hover {
+    color: #F2CB05;
+    transform: scale(1.1);
+}
+
+.red:hover {
+    color: #F23D3D;
+    transform: scale(1.1);
+}
+
+.green:hover {
+    color: #0F8C3B;
+    transform: scale(1.1);
+}
 
 .jumbotron ul {
     display: flex;
     align-content: center;
+}
+ 
+.jumbotron {
+    display: flex;
+    justify-content: space-between;
+    gap: 84px;
+    text-align: center;
 }
 
 .cd {
@@ -77,7 +180,20 @@ li {
 }
 
 /*- - - - - Main - - - - - */
+.row1, .row2, .row3, .row4 {
+display: flex;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+gap: 15px;
+}
 
 .album {
-    height: 300px;
+    height: 300px; 
+}
+
+.album img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out; 
 }
