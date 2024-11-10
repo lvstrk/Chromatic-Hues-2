@@ -1,25 +1,21 @@
 /*- - - - - Styles - - - - - */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: unset;
+    padding: unset;
     border: unset;
     outline: unset;
     list-style: none;
     text-decoration: none;
 }
 
+html,
 body {
-    overflow-y: scroll;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
     display: flex;
     background-image: repeating-linear-gradient(to left, #F2E2DC, #F2DFBB, #AB8BD9);
-}
-header, main, footer {
-    flex: 1; /
-    display: flex;
-    flex-direction: row; /
-    justify-content: center; 
-    align-items: center; 
 }
 
 /*- - - - - Styles Font - - - - - */
@@ -45,61 +41,37 @@ li {
 
 /*- - - - - Nav bar - - - - - */
 
-.nav_bar ul {
+.nav {
     display: flex;
+    align-items: center;
+    background-color: #f0f0f0; 
+    border-radius:
+    padding: 10px;
+}
+
+.nav {
+    writing-mode: vertical-lr;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 70px;
+    z-index: 100;
+    height: 100vh;
+    
 }
 
 .nav_bar ul {
-    display: inline-block;
-    ;
+    /* display: inline-block;; */
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    gap: 80px;
+    padding: 30px;
 }
 
-.nav_bar ul {
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: .3s;
-}
-
-.nav_bar ul li:before {
-    position: absolute;
-    inset: calc(100% - 3px) 0 0 0;
-    background: #94BDF2;
-    scale: 0 1;
-    transition: .3s, translate 0s .3s;
-}
-
-ul:hover li:before {
-    scale: 1;
-}
-
-.nav_bar ul li:hover:before {
-    translate: 0;
-    transition: .3s;
-}
-
-.nav_bar ul:hover li:has(~ li:hover):before {
-    translate: 100% 0;
-    transition: .2s .2s, scale 0s .4s;
-}
-
-.nav_bar ul:hover li:hover~li:before {
-    translate: -100% 0;
-    transition: .2s .2s, scale 0s .4s;
-}
-
-.nav_bar ul {
-    display: inline-block;
-    ;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav_bar ul {
+.nav_bar ul li{
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -110,7 +82,9 @@ ul:hover li:before {
     content: "";
     position: absolute;
     inset: calc(100% - 3px) 0 0 0;
+    /* 3px = the thickness */
     background: #94BDF2;
+    /* the color */
     scale: 0 1;
     transition: .3s, translate 0s .3s;
 }
@@ -132,6 +106,11 @@ ul:hover li:before {
 .nav_bar ul:hover li:hover~li:before {
     translate: -100% 0;
     transition: .2s .2s, scale 0s .4s;
+}
+
+/* - - - - - Section Scrolling - - - -  */
+#section-scrolling {
+    display: flex;
 }
 
 /*- - - - - Jumbotron - - - - - */
