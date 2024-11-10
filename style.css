@@ -1,8 +1,8 @@
 /*- - - - - Styles - - - - - */
 * {
     box-sizing: border-box;
-    margin: unset;
-    padding: unset;
+    margin: 0;
+    padding: 0;
     border: unset;
     outline: unset;
     list-style: none;
@@ -10,10 +10,16 @@
 }
 
 body {
-    height: 100%;
     overflow-y: scroll;
     display: flex;
-    background-image: linear-gradient(to left, #F2E2DC, #F2DFBB, #AB8BD9);
+    background-image: repeating-linear-gradient(to left, #F2E2DC, #F2DFBB, #AB8BD9);
+}
+header, main, footer {
+    flex: 1; /
+    display: flex;
+    flex-direction: row; /
+    justify-content: center; 
+    align-items: center; 
 }
 
 /*- - - - - Styles Font - - - - - */
@@ -40,11 +46,12 @@ li {
 /*- - - - - Nav bar - - - - - */
 
 .nav_bar ul {
-display: flex;
+    display: flex;
 }
 
 .nav_bar ul {
-    display: inline-block;;
+    display: inline-block;
+    ;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -57,30 +64,36 @@ display: flex;
     transition: .3s;
 }
 
-  .nav_bar ul li:before {
+.nav_bar ul li:before {
     position: absolute;
-    inset: calc(100% - 3px) 0 0 0; 
-    background: #94BDF2; 
+    inset: calc(100% - 3px) 0 0 0;
+    background: #94BDF2;
     scale: 0 1;
     transition: .3s, translate 0s .3s;
-  }
-  ul:hover li:before {
+}
+
+ul:hover li:before {
     scale: 1;
-  }
-  .nav_bar ul li:hover:before {
+}
+
+.nav_bar ul li:hover:before {
     translate: 0;
     transition: .3s;
-  }
-  .nav_bar ul:hover li:has(~ li:hover):before {
+}
+
+.nav_bar ul:hover li:has(~ li:hover):before {
     translate: 100% 0;
-    transition: .2s .2s,scale 0s .4s;
-  }
-  .nav_bar ul:hover li:hover ~ li:before {
+    transition: .2s .2s, scale 0s .4s;
+}
+
+.nav_bar ul:hover li:hover~li:before {
     translate: -100% 0;
-    transition: .2s .2s,scale 0s .4s;
-  }
+    transition: .2s .2s, scale 0s .4s;
+}
+
 .nav_bar ul {
-    display: inline-block;;
+    display: inline-block;
+    ;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -93,37 +106,44 @@ display: flex;
     transition: .3s;
 }
 
-  .nav_bar ul li:before {
+.nav_bar ul li:before {
     content: "";
     position: absolute;
-    inset: calc(100% - 3px) 0 0 0; 
-    background: #94BDF2; 
+    inset: calc(100% - 3px) 0 0 0;
+    background: #94BDF2;
     scale: 0 1;
     transition: .3s, translate 0s .3s;
-  }
-  ul:hover li:before {
+}
+
+ul:hover li:before {
     scale: 1;
-  }
-  .nav_bar ul li:hover:before {
+}
+
+.nav_bar ul li:hover:before {
     translate: 0;
     transition: .3s;
-  }
-  .nav_bar ul:hover li:has(~ li:hover):before {
+}
+
+.nav_bar ul:hover li:has(~ li:hover):before {
     translate: 100% 0;
-    transition: .2s .2s,scale 0s .4s;
-  }
-  .nav_bar ul:hover li:hover ~ li:before {
+    transition: .2s .2s, scale 0s .4s;
+}
+
+.nav_bar ul:hover li:hover~li:before {
     translate: -100% 0;
-    transition: .2s .2s,scale 0s .4s;
-  }
+    transition: .2s .2s, scale 0s .4s;
+}
 
 /*- - - - - Jumbotron - - - - - */
 
-.blue, .yellow, .red, .green {
-    transition: all 0.3s ease-in-out; 
+.blue,
+.yellow,
+.red,
+.green {
+    transition: all 0.3s ease-in-out;
     margin: 10px;
-  }
-  
+}
+
 
 .blue:hover {
     color: #94BDF2;
@@ -149,7 +169,7 @@ display: flex;
     display: flex;
     align-content: center;
 }
- 
+
 .jumbotron {
     display: flex;
     justify-content: space-between;
@@ -180,20 +200,23 @@ display: flex;
 }
 
 /*- - - - - Main - - - - - */
-.row1, .row2, .row3, .row4 {
-display: flex;
-padding-left: 20px;
-padding-right: 20px;
-padding-top: 10px;
-padding-bottom: 10px;
-gap: 15px;
+.row1,
+.row2,
+.row3,
+.row4 {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 15px;
 }
 
 .album {
-    height: 300px; 
+    height: 300px;
 }
 
 .album img:hover {
-    transform: scale(1.1); 
-    transition: transform 0.3s ease-in-out; 
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
 }
