@@ -9,3 +9,38 @@ document.addEventListener('wheel', (e) => {
         container.style.transform = `translateX(-${scroll}px)`
     }
 })
+
+// Get all album images
+const albumImages = document.querySelectorAll('.row img');
+
+// Loop through each image and add hover event listeners
+albumImages.forEach(image => {
+    image.addEventListener('mouseenter', () => {
+        // Get the corresponding audio element using the next sibling
+        const audioElement = image.nextElementSibling;
+        
+        // Check if the next sibling is an audio element
+        if (audioElement && audioElement.tagName.toLowerCase() === 'audio') {
+            console.log("Playing audio:", audioElement.src);  // Debugging: see which audio is being played
+            audioElement.play().catch(err => {
+                console.error("Error playing audio:", err);  // Log any play errors
+            });
+        } else {
+            console.error("No audio element found next to image:", image.src);
+        }
+    });
+
+    // Stop audio when mouse leaves the image
+    image.addEventListener('mouseleave', () => {
+        const audioElement = image.nextElementSibling;
+        
+        // Check if the next sibling is an audio element
+        if (audioElement && audioElement.tagName.toLowerCase() === 'audio') {
+            console.log("Pausing audio:", audioElement.src);  // Debugging: see which audio is being paused
+            audioElement.pause(); // Pause the audio when mouse leaves
+            audioElement.currentTime = 0; // Reset to start
+        } else {
+            console.error("No audio element found next to image on mouse leave:", image.src);
+        }
+    });
+});
