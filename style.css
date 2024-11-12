@@ -1,4 +1,4 @@
-/*- - - - - Styles - - - - - */
+- - - - Styles - - - - - */
 * {
     box-sizing: border-box;
     margin: unset;
@@ -25,12 +25,14 @@ h1 {
     font-size: 60px;
     color: #7350BF;
     font-family: 'Micro 5';
+    margin-bottom: 20px;
 }
 
 p {
     font-family: Concert One;
     font-size: 17px;
     color: #7350BF;
+    margin-bottom: 10px;
 }
 
 li {
@@ -42,70 +44,40 @@ li {
 /*- - - - - Nav bar - - - - - */
 
 .nav {
-    display: flex;
-    align-items: center;
-    background-color: #f0f0f0; 
-    border-radius:
-    padding: 10px;
-}
-
-.nav {
     writing-mode: vertical-lr;
     display: flex;
-    align-items: center;
-    padding: 20px;
-    gap: 70px;
     z-index: 100;
     height: 100vh;
-    
+    text-align: center;
+}
+
+.box {
+    width: 84px;
+    height: 100vh;
+    background-color: #F2E2DC;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .nav_bar ul {
-    /* display: inline-block;; */
+    text-align: center;
     display: flex;
     flex-direction: column;
     list-style: none;
-    gap: 80px;
-    padding: 30px;
+    gap: 130px;
+    padding: 10px;
 }
 
-.nav_bar ul li{
+.nav_bar ul li {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: .3s;
-}
-
-.nav_bar ul li:before {
-    content: "";
-    position: absolute;
-    inset: calc(100% - 3px) 0 0 0;
-    /* 3px = the thickness */
-    background: #94BDF2;
-    /* the color */
-    scale: 0 1;
-    transition: .3s, translate 0s .3s;
-}
-
-ul:hover li:before {
-    scale: 1;
-}
-
-.nav_bar ul li:hover:before {
-    translate: 0;
-    transition: .3s;
-}
-
-.nav_bar ul:hover li:has(~ li:hover):before {
-    translate: 100% 0;
-    transition: .2s .2s, scale 0s .4s;
-}
-
-.nav_bar ul:hover li:hover~li:before {
-    translate: -100% 0;
-    transition: .2s .2s, scale 0s .4s;
+    text-align: center;
 }
 
 /* - - - - - Section Scrolling - - - -  */
@@ -120,7 +92,7 @@ ul:hover li:before {
 .red,
 .green {
     transition: all 0.3s ease-in-out;
-    margin: 10px;
+    margin: 25px;
 }
 
 
@@ -154,6 +126,11 @@ ul:hover li:before {
     justify-content: space-between;
     gap: 84px;
     text-align: center;
+    margin-left: 100px;
+}
+
+.jumbotron_text {
+    align-content: center;
 }
 
 .cd {
@@ -185,17 +162,114 @@ ul:hover li:before {
 .row4 {
     display: flex;
     padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     gap: 15px;
 }
 
 .album {
-    height: 300px;
+    height: 200px;
 }
 
 .album img:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
 }
+
+/*- - - - - Footer - - - - - */
+
+footer {
+    writing-mode: vertical-lr;
+    display: flex
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    height: 100%; 
+    width: 200px;
+    margin-top: auto;
+    padding: 20px;
+    background-color: #1E1E1E;
+    color: white;
+}
+
+.card {
+    writing-mode: vertical-lr;
+    display: flex;
+    z-index: 100;
+    height: 100vh;
+    text-align: center;
+    background-color: rgb(238, 238, 238);
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+    margin-top: auto;
+    padding: 20px;
+    background-color: #1E1E1E;
+    color: white;
+  }
+  
+  /* for all social containers*/
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+  }
+  /* instagram*/
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: .3s;
+  }
+  /* twitter*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: .3s;
+  }
+  /* linkdin*/
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: .3s;
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: #128C7E;
+    transition-duration: .3s;
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
