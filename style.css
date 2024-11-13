@@ -51,6 +51,16 @@ li {
     text-align: center;
 }
 
+nav ul {
+    justify-content: center; 
+    align-items: center;
+}
+
+nav image {
+    justify-content: center; 
+    align-items: center;
+}
+
 .box {
     width: 84px;
     height: 100vh;
@@ -183,6 +193,10 @@ li {
 
 /*- - - - - Footer - - - - - */
 
+.beta {
+    
+}
+
 footer {
     writing-mode: vertical-lr;
     display: flex;
@@ -206,7 +220,6 @@ footer {
     background-color: rgb(238, 238, 238);
     align-items: center;
     justify-content: center;
-    padding: 25px 25px;
     gap: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
     margin-top: auto;

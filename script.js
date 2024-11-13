@@ -39,13 +39,6 @@ albumImages.forEach(image => {
     // image.addEventListener('click', () => {
     //     const audioElement = image.nextElementSibling;
         
-    //     // Check if the next sibling is an audio element
-    //     if (audioElement && audioElement.tagName.toLowerCase() === 'audio') {
-    //         console.log("Pausing audio:", audioElement.src);  // Debugging: see which audio is being paused
-    //         audioElement.pause(); // Pause the audio when mouse leaves
-    //         audioElement.currentTime = 0; // Reset to start
-    //     } else {
-    //         console.error("No audio element found next to image on mouse leave:", image.src);
-    //     }
-    // });
 });
+
+/* - - - - - - - - CURSOR - - - - - - - - */ 
